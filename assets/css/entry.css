@@ -1,0 +1,185 @@
+.entry {
+  background-color: lightgray;
+  flex-grow: 1;
+}
+
+.entry > header {
+  background-color: var(--g-1);
+  background-image:
+    radial-gradient(
+      circle at top left,
+      var(--g-1),
+      var(--g-2)
+    );
+  padding: 1rem 2rem 0;
+  position: relative;
+}
+
+.entry > header a {
+  color: var(--c-1);
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.entry > header h1 {
+  color: var(--c-1);
+  line-height: 1;
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin: .5rem 0;
+}
+
+.entry > header h1 small {
+  color: var(--c-2);
+  display: block;
+  font-size: .5em;
+}
+
+.entry > header img {
+  height: 15rem;
+  margin: 1rem auto 0;
+  position: relative;
+  width: 15rem;
+  z-index: 10;
+}
+
+.entry > div {
+  /* info div text colors */
+  --t-1: #2d3748;
+  --t-2: #718096;
+  --t-3: #4a5568;
+
+  background-color: white;
+  border-radius: 1.5rem 1.5rem 0 0;
+  color: var(--t-1);
+  margin-top: -2.5rem;
+  padding: 3rem 2rem 1rem;
+  position: relative;
+}
+
+.entry > div > * + * {
+  margin-top: 1em;
+}
+
+.entry > div h2 {
+  color: var(--t-2);
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.entry > div h2 + * {
+  margin-top: .25em;
+}
+
+.entry > div > dl {
+  background-color: #edf2f7;
+  border-radius: 1rem;
+  columns: 2;
+  margin: 0 -1rem .5rem;
+  padding: .5rem 1rem;
+}
+
+.entry > div > dl > * {
+  page-break-inside: avoid;
+}
+
+.entry > div > dl > * + * {
+  margin-top: .5rem;
+}
+
+.entry > div > dl dt {
+  color: var(--t-3);
+}
+
+.entry > div > dl dd {
+  font-weight: 700;
+  margin-left: 1ch;
+}
+
+.entry .type {
+  background-color: var(--background);
+  border: .125rem solid var(--border);
+  border-radius: 100em;
+  color: var(--color);
+  display: inline-block;
+  font-weight: 700;
+  min-width: 6ch;
+  padding: .25rem 1.25rem;
+  text-align: center;
+}
+
+.entry .type.electric {
+  --background: #f6e05e;
+  --border: #ecc94b;
+  --color: #2d3748;
+}
+
+.entry .type.ground {
+  --background: #9c4221;
+  --border: #7b341e;
+  --color: #f7fafc;
+}
+
+.entry .type.fire {
+  --background: #e53e3e;
+  --border: #c53030;
+  --color: #fff5f5;
+}
+
+.entry .type.rock {
+  --background: #4a5568;
+  --border: #2d3748;
+  --color: #f7fafc;
+}
+
+.entry .type.water {
+  --background: #3182c3;
+  --border: #2b6bc0;
+  --color: #ebf8ff;
+}
+
+.entry .type.grass {
+  --background: #38a169;
+  --border: #2f855a;
+  --color: #f0fff4;
+}
+
+.entry .type.poison {
+  --background: #6b46c1;
+  --border: #553c9a;
+  --color: #faf5ff;
+}
+
+.entry .type.flying {
+  --background: #e2e8f0;
+  --border: #cbd5e0;
+  --color: #4a5568;
+}
+
+.entry .type.ice {
+  --background: #c3dafe;
+  --border: #a3bffa;
+  --color: #434190;
+}
+
+/* pokemon color definitions */
+.entry.bulbasaur {
+  --g-1: #b2f5ea;
+  --g-2: #48bb78;
+  --c-1: #285e61;
+  --c-2: #38a169;
+}
+
+.entry.charmander {
+  --g-1: #feb2b2;
+  --g-2: #e53e3e;
+  --c-1: #742a2a;
+  --c-2: #c53030;
+}
+
+.entry.pikachu {
+  --g-1: #fefcbf;
+  --g-2: #ecc94b;
+  --c-1: #744210;
+  --c-2: #b7791f;
+}
