@@ -1,3 +1,8 @@
 @tailwind base;
+
+body {
+  @apply bg-black text-lg leading-normal min-h-screen flex;
+}
+
 @tailwind components;
 @tailwind utilities;
