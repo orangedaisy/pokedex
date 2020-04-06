@@ -56,6 +56,7 @@
       startAdventure(name) {
         this.trainerName = name;
         this.welcomeMsg = false;
+        window.scrollTo(0,0);
       },
       pokemonImage(pokemon) {
         return require('./assets/images/' + pokemon + '.png');
