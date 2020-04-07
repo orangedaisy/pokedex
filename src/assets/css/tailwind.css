@@ -4,5 +4,55 @@ body {
   @apply bg-black text-lg leading-normal min-h-screen flex;
 }
 
+/* Entry common styles */
+#entry {
+  @apply bg-white m-auto max-w-sm min-h-screen;
+}
+
+#entry > header {
+  @apply px-8 pt-4 relative;
+}
+
+#entry > header a {
+  @apply text-2xl;
+}
+
+#entry > header a svg {
+  @apply stroke-current;
+}
+
+#entry > header h1 {
+  @apply leading-none text-4xl font-black my-4;
+}
+
+#entry > header h1 small {
+  @apply block text-xl;
+}
+
+#entry > header img {
+  @apply mt-4 mx-auto relative z-10 w-64 h-64 block;
+}
+
+#entry > div {
+  @apply bg-white text-gray-800 -mt-10 pt-12 px-8 pb-4 relative;
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+#entry > div > * + * {
+  @apply mt-4;
+}
+
+#entry > div * + h2 {
+  @apply mt-6;
+}
+
+#entry > div h2 {
+  @apply text-gray-600 text-2xl font-bold leading-none;
+}
+
+#entry > div h2 + * {
+  @apply mt-2;
+}
+
 @tailwind components;
 @tailwind utilities;
