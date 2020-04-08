@@ -10,6 +10,7 @@ import Header from './components/entry/Header';
 import Type from './components/entry/Type';
 import Attributes from './components/entry/Attributes';
 import router from './router'
+import store from './store'
 
 Vue.component('pokedex', Pokedex);
 Vue.component('entryBackButton', BackButton);
@@ -19,5 +20,6 @@ Vue.component('entryAttributes', Attributes);
 
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')
