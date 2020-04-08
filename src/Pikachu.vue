@@ -2,10 +2,8 @@
   <div id="entry" class="pikachu">
 
     <entry-header>
-      <entry-back-button slot="back-button"></entry-back-button>
       <h1 slot="name-number"><small>#025</small> Pikachu</h1>
       <entry-type type="Electric" slot="type"></entry-type>
-      <!-- <span class="type electric">Electric</span> -->
       <img src="./assets/images/pikachu.png" alt="Pikachu" slot="image">
     </entry-header>
 
@@ -31,7 +29,7 @@
   </div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
   header {
     @apply bg-yellow-200 text-yellow-900;
     background-image:
@@ -40,9 +38,5 @@
         #fefcbf, /* yellow-200 */
         #eec94b /* yellow-500 */
       );
-  }
-
-  header small {
-    @apply text-yellow-700;
   }
 </style>

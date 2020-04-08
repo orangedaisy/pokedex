@@ -1,6 +1,6 @@
 <template>
   <header>
-    <slot name="back-button"></slot>
+    <entry-back-button></entry-back-button>
     <slot name="name-number"></slot>
     <slot name="type"></slot>
     <slot name="image"></slot>
