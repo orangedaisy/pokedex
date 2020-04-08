@@ -2,81 +2,30 @@
   <div id="app">
 
     <header>
-      <h3 class="trainer" v-if="!welcomeMsg">{{ trainerName }}</h3>
+      <h3 class="trainer">Owen</h3>
     </header>
 
-    <template v-if="welcomeMsg">
-      <div class="welcome">
-        <h3>Welcome, trainer!</h3>
-        <p>
-          Our world is inhabited by creatures that we call POKéMON. People and
-          POKéMON live together by supporting each other. Some people play with
-          POKéMON, some battle with them. But we don't know everything about
-          POKéMON yet. With this POKéDEX, you can help us learn more about
-          POKéMON by capturing each one you see in the wild.
-        </p>
-        <p>Enter your name below to begin your POKéMON adventure!</p>
-        <input type="text" placeholder="Your name" v-model="trainerName">
-        <button @click="startAdventure(trainerName)">Let's go!</button>
-      </div>
-    </template>
-
-    <template v-else>
-      <ul>
-        <li v-for="pokemon in pokemonList" :key="pokemon.name">
-          <img height="152" width="160" :src="pokemonImage(pokemon.name)">
-        </li>
-      </ul>
-    </template>
+    <router-view></router-view>
 
   </div>
 </template>
 
 <script>
   export default {
-    data() {
-      return {
-        welcomeMsg: true,
-        trainerName: '',
-        pokemonList: [
-          { name: 'bulbasaur' },
-          { name: 'charmander' },
-          { name: 'cubone' },
-          { name: 'eevee' },
-          { name: 'jigglypuff' },
-          { name: 'meowth' },
-          { name: 'pikachu' },
-          { name: 'piplup' },
-          { name: 'squirtle' },
-          { name: 'togepi' }
-        ]
-      }
-    },
-    methods: {
-      startAdventure(name) {
-        this.trainerName = name;
-        this.welcomeMsg = false;
-        window.scrollTo(0,0);
-      },
-      pokemonImage(pokemon) {
-        return require('./assets/images/' + pokemon + '.png');
-      }
-    }
   }
 </script>
 
 <style lang="scss">
-
   #app {
     @apply bg-red-700 m-auto max-w-sm min-h-screen;
   }
 
-  #app header {
+  #app > header {
     @apply bg-red-800 border-b-4 border-red-900 relative flex;
     height: 4.5rem;
   }
 
-  #app header::before {
+  #app > header::before {
     @apply bg-teal-400 border-4 border-white rounded-full block absolute w-12 h-12;
     content: '';
     top: 50%;
@@ -84,7 +33,7 @@
     transform: translateY(-50%);
   }
 
-  #app header::after {
+  #app > header::after {
     @apply bg-red-400 rounded-full block w-4 h-4 absolute;
     box-shadow:
       1.5rem 0 0 #faf089,
@@ -126,18 +75,4 @@
   #app .welcome * + * {
     @apply mt-4;
   }
-
-  #app ul {
-    @apply grid grid-cols-2 gap-4 p-4;
-    grid-auto-rows: 10rem;
-  }
-
-  #app ul li {
-    @apply bg-gray-300 border-4 border-red-900 rounded-lg;
-  }
-
-  #app ul li img {
-    @apply h-full w-full object-contain;
-  }
-
 </style>
