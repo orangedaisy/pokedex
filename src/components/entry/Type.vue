@@ -10,7 +10,7 @@
 
 <style>
   .type {
-    @apply border-2 rounded-full inline-block font-bold px-5 py-2 text-center leading-none;
+    @apply border-2 rounded-full inline-block font-bold px-5 py-2 text-center leading-none m-px;
     min-width: 6ch;
   }
 
@@ -48,5 +48,21 @@
 
   .type.ice {
     @apply bg-indigo-200 border-indigo-300 text-indigo-800;
+  }
+
+  .type.normal {
+    @apply bg-orange-700 border-orange-800 text-orange-100;
+  }
+
+  .type.fighting {
+    @apply bg-pink-700 border-pink-800 text-pink-100;
+  }
+
+  .type.fairy {
+    @apply bg-pink-300 border-pink-400 text-pink-900;
+  }
+
+  .type.steel {
+    @apply bg-gray-100 border-gray-400 text-gray-600;
   }
 </style>
