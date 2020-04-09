@@ -2,7 +2,7 @@
   <div id="app">
 
     <header>
-      <h3 class="trainer">Owen</h3>
+      <trainer-name></trainer-name>
     </header>
 
     <router-view></router-view>
@@ -11,7 +11,12 @@
 </template>
 
 <script>
+  import Trainer from '@/components/Trainer';
+
   export default {
+    components: {
+      trainerName: Trainer
+    }
   }
 </script>
 
@@ -41,10 +46,6 @@
     content: '';
     left: 4.5rem;
     top: .5rem;
-  }
-
-  #app .trainer {
-    @apply ml-auto leading-none py-1 px-5 border-4 border-red-900 rounded-lg text-green-900 bg-green-400 text-xl font-black self-center mr-4;
   }
 
   #app .welcome {
