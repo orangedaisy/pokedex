@@ -24,20 +24,9 @@
 
 <script>
   export default {
-    data() {
-      return {
-        pokemonList: [
-          { name: 'bulbasaur' },
-          { name: 'charmander' },
-          { name: 'squirtle' },
-          { name: 'pikachu' },
-          { name: 'jigglypuff' },
-          { name: 'meowth' },
-          { name: 'cubone' },
-          { name: 'eevee' },
-          { name: 'togepi' },
-          { name: 'piplup' },
-        ]
+    computed: {
+      pokemonList() {
+        return this.$store.state.caughtPokemon;
       }
     },
     methods: {
