@@ -22,7 +22,7 @@
 
 <style lang="scss">
   #app {
-    @apply bg-red-700 m-auto max-w-sm min-h-screen;
+    @apply bg-red-700 m-auto max-w-sm min-h-screen w-full;
   }
 
   #app > header {
