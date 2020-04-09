@@ -48,11 +48,11 @@ body {
 }
 
 #entry > header a {
-  @apply text-2xl;
+  @apply font-bold;
 }
 
 #entry > header a svg {
-  @apply stroke-current;
+  @apply stroke-current inline-block -mt-1;
 }
 
 #entry > header h1 {
