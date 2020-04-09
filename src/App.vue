@@ -22,7 +22,7 @@
 
 <style lang="scss">
   #app {
-    @apply bg-red-700 m-auto max-w-sm min-h-screen w-full;
+    @apply bg-red-700 m-auto max-w-sm min-h-screen w-full flex flex-col;
   }
 
   #app > header {
@@ -46,6 +46,10 @@
     content: '';
     left: 4.5rem;
     top: .5rem;
+  }
+
+  #app > div {
+    @apply flex-grow;
   }
 
   #app .welcome {

@@ -13,13 +13,18 @@
   <!--   <button @click="startAdventure(trainerName)">Let's go!</button> -->
   <!-- </div> -->
   <!-- <ul v-else> -->
-  <ul>
-    <li v-for="pokemon in pokemonList" :key="pokemon.name">
-      <router-link :to="pokemon.name">
-        <img height="152" width="160" :src="pokemonImage(pokemon.name)">
-      </router-link>
-    </li>
-  </ul>
+  <div class="pokedex">
+    <ul>
+      <li v-for="pokemon in pokemonList" :key="pokemon.name">
+        <router-link :to="pokemon.name">
+          <img height="152" width="160" :src="pokemonImage(pokemon.name)">
+        </router-link>
+      </li>
+    </ul>
+    <footer v-if="wildPokemon.length">
+      <router-link class="button" to="/catch">Catch!</router-link>
+    </footer>
+  </div>
 </template>
 
 <script>
@@ -27,6 +32,9 @@
     computed: {
       pokemonList() {
         return this.$store.state.caughtPokemon;
+      },
+      wildPokemon() {
+        return this.$store.state.catchList;
       }
     },
     methods: {
@@ -38,8 +46,12 @@
 </script>
 
 <style scoped>
+  .pokedex {
+    @apply flex flex-col;
+  }
+
   ul {
-    @apply grid grid-cols-2 gap-4 p-4;
+    @apply grid grid-cols-2 gap-4 p-4 flex-grow;
     grid-auto-rows: 10rem;
   }
 
@@ -49,5 +61,13 @@
 
   ul li img {
     @apply h-full w-full object-contain;
+  }
+
+  footer {
+    @apply sticky bottom-0 bg-red-800 border-t-4 border-red-900 p-2;
+  }
+
+  footer a {
+    @apply block py-2;
   }
 </style>
