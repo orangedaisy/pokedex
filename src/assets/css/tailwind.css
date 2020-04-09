@@ -88,5 +88,18 @@ body {
   @apply mt-2;
 }
 
+.button {
+  @apply bg-blue-500 border-4 border-blue-700 text-white font-bold rounded-lg text-center transition-colors duration-200;
+}
+
+.button:hover,
+.button:focus {
+  @apply bg-blue-600 border-blue-800;
+}
+
+.button:active {
+  @apply bg-blue-700 border-blue-900;
+}
+
 @tailwind components;
 @tailwind utilities;
