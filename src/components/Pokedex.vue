@@ -37,7 +37,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   ul {
     @apply grid grid-cols-2 gap-4 p-4;
     grid-auto-rows: 10rem;
