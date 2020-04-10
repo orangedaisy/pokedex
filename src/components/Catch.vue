@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>
+    <div class="text">
       <h3>Catch that POKéMON!</h3>
       <p>Which POKéMON do you see?</p>
     </div>
@@ -31,20 +31,12 @@
 </script>
 
 <style scoped>
-  div {
-    @apply p-4;
-  }
-
-  div > div > div {
-    @apply bg-gray-300 border-4 border-red-900 rounded-lg p-4 text-center;
-  }
-
-  h3 {
-    @apply text-2xl font-black leading-none mb-2;
+  p {
+    @apply text-center;
   }
 
   li {
-    @apply mt-4;
+    @apply mt-4 px-4;
   }
 
   button {
