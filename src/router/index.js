@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Pokedex from '../components/Pokedex.vue'
-import Catch from '../components/Catch.vue'
+// import Catch from '../components/Catch.vue'
+import NewCatch from '../components/NewCatch.vue'
 import Pikachu from '../Pikachu.vue'
 import Charmander from '../Charmander.vue'
 import Bulbasaur from '../Bulbasaur.vue'
@@ -17,7 +18,7 @@ Vue.use(VueRouter)
 
   const routes = [
   { path: '', component: Pokedex },
-  { path: '/catch', component: Catch },
+  { path: '/catch', component: NewCatch },
   { path: '/pikachu', component: Pikachu },
   { path: '/charmander', component: Charmander },
   { path: '/bulbasaur', component: Bulbasaur },
