@@ -1,7 +1,5 @@
 <template>
   <div>
-    <p class="text">{{ error }}</p>
-    <p class="decode-result text">Last result: <b>{{ result }}</b></p>
     <qrcode-stream @decode="onDecode"></qrcode-stream>
   </div>
 </template>
@@ -13,13 +11,14 @@
     components: { QrcodeStream },
     data() {
       return {
-        result: '',
+        pokemon: '',
         error: ''
       }
     },
     methods: {
-      onDecode(result) {
-        alert(result);
+      onDecode(pokemon) {
+        this.$store.commit('pokeball', pokemon);
+        this.$router.push(`/${pokemon}`);
       },
       async onInit(promise) {
         try {
