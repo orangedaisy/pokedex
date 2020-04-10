@@ -66,6 +66,7 @@ body {
 
 #entry > header img {
   @apply mt-4 mx-auto relative z-10 w-64 h-64 block;
+  filter: drop-shadow(0 0 .5em rgba(45,55,72,.5));
 }
 
 #entry > div {

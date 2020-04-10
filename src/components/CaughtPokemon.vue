@@ -39,7 +39,7 @@
 
   img {
     @apply mx-auto my-8;
-    filter: drop-shadow(0 0 .25em rgba(0,0,0,.25));
+    filter: drop-shadow(0 0 .5em rgba(45,55,72,.5));
     width: 75%;
   }
 
