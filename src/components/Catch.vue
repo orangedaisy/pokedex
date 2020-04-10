@@ -1,27 +1,24 @@
 <template>
   <div class="catch-screen">
     <qrcode-stream @decode="onDecode"></qrcode-stream>
-    <caught-pokemon v-if="showModal" :pokemon="pokemonName"></caught-pokemon>
   </div>
 </template>
 
 <script>
   import { QrcodeStream } from 'vue-qrcode-reader'
-  import CaughtPokemon from '@/components/CaughtPokemon'
 
   export default {
-    components: { QrcodeStream, CaughtPokemon },
+    components: { QrcodeStream },
     data() {
       return {
         pokemonName: '',
         error: '',
-        showModal: false
       }
     },
     methods: {
       onDecode(pokemonName) {
         this.$store.commit('pokeball', pokemonName);
-        this.showModal = true;
+        this.$router.push(`/caught/${pokemonName}`);
       },
       async onInit(promise) {
         try {
@@ -45,9 +42,3 @@
     }
   }
 </script>
-
-<style scoped>
-  .catch-screen {
-    @apply relative;
-  }
-</style>
