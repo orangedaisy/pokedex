@@ -41,10 +41,6 @@
             this.error = "ERROR: Stream API is not supported in this browser"
           }
         }
-      },
-      beforeRouteLeave(from, next) {
-        this.showModal = false;
-        next();
       }
     }
   }
