@@ -1,24 +1,27 @@
 <template>
-  <div>
+  <div class="catch-screen">
     <qrcode-stream @decode="onDecode"></qrcode-stream>
+    <caught-pokemon v-if="showModal" :pokemon="pokemonName"></caught-pokemon>
   </div>
 </template>
 
 <script>
   import { QrcodeStream } from 'vue-qrcode-reader'
+  import CaughtPokemon from '@/components/CaughtPokemon'
 
   export default {
-    components: { QrcodeStream },
+    components: { QrcodeStream, CaughtPokemon },
     data() {
       return {
-        pokemon: '',
-        error: ''
+        pokemonName: '',
+        error: '',
+        showModal: false
       }
     },
     methods: {
-      onDecode(pokemon) {
-        this.$store.commit('pokeball', pokemon);
-        this.$router.push(`/${pokemon}`);
+      onDecode(pokemonName) {
+        this.$store.commit('pokeball', pokemonName);
+        this.showModal = true;
       },
       async onInit(promise) {
         try {
@@ -38,9 +41,17 @@
             this.error = "ERROR: Stream API is not supported in this browser"
           }
         }
+      },
+      beforeRouteLeave(from, next) {
+        this.showModal = false;
+        next();
       }
     }
   }
 </script>
 
-<style></style>
+<style scoped>
+  .catch-screen {
+    @apply relative;
+  }
+</style>
