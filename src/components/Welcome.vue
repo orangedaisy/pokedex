@@ -18,6 +18,11 @@
 
 <script>
   export default {
+    data() {
+      return {
+        name: this.$store.state.trainerName
+      }
+    },
     methods: {
       startAdventure(name) {
         this.$store.commit('setName', name);
