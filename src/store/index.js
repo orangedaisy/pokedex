@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-      trainerName: 'Owen',
+      trainerName: '',
+      welcomeMsg: true,
       catchList: [
           { name: 'bulbasaur' },
           { name: 'charmander' },
@@ -21,6 +22,12 @@ export default new Vuex.Store({
       caughtPokemon: []
   },
   mutations: {
+      setName: (state, payload) => {
+          state.trainerName = payload;
+      },
+      openPokedex: (state, payload) => {
+          state.welcomeMsg = payload;
+      },
       pokeball: (state, payload) => {
           let pokemon = state.catchList.find(item => item.name == payload);
           let pokemonIndex = state.catchList.indexOf(pokemon);
