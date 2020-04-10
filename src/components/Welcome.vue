@@ -10,7 +10,7 @@
     </p>
     <p>Enter your name below to begin your POKéMON adventure!</p>
     <form @submit.prevent="startAdventure(name)">
-      <input type="text" placeholder="Your name" v-model="name">
+      <input type="text" placeholder="Your name" v-model="name" required>
       <button class="button">Let's go!</button>
     </form>
   </div>
